@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>If Example</title>
+</head>
+<body>
+    <h1>Hello, Codeup</h1>
+
+    <script>
+        var name = 'cameron';
+        var message = '';
+        // Ternary
+        message = (name == 'Cameron') ? 'Hi Cameron' : 'Hello Not-Cameron';
+        console.log(message);
+
+        name = '';
+
+        if(name == 'Tony') {
+            message = 'Hi Tony';
+        } else if (name == 'Shawn') {
+            message = 'Hi Shawn';
+        } else if (name == 'Craig') {
+            message = 'Hi Craig';
+        } else if (name == 'Trey') {
+            message = 'Hi Trey';
+        } else if (name == 'William') {
+            message = 'Hi William';
+        } else {
+            message = 'Yo';
+        }
+        console.log(message);
+
+        name = 'Bob';
+        if(typeof name === 'string') {
+            message = 'Hi ' + name;
+        } else {
+            message = 'The variable is not a string';
+        }
+        console.log(message);
+
+    </script>
+</body>
+</html>

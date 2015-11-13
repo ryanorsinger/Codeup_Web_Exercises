@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Iterating Arrays</title>
+</head>
+<body>
+    <h1>Iterating Arrays</h1>
+
+    <script>
+
+        // todo:
+        // Create an array of 4 names using literal array notation, in a variable called 'names'
+
+        var inventory = ['JavaScript the Good Parts', 'pens', 'paper', 'laptop case'];
+
+        var shoppingCart = [];
+
+        shoppingCart.push(inventory);
+
+        // var removedItemFromBeginningofArray = shoppingCart.shift();
+        // var removedItemFromEndOfArray = shoppingCart.pop();
+
+        // shoppingCart.splice(0, 2);
+
+        var itemToRemove = prompt('What item do you want to remove from the shoppingCart?');
+
+        shoppingCart.splice(shoppingCart.indexOf(itemToRemove), 1);
+
+
+        function removeElementsFromArray(array, index, numberOfElements) {
+            var arrayAfterRemoval = array.splice(index, numberOfElements);
+
+            return arrayAfterRemoval;
+        }
+
+
+    </script>
+</body>
+</html>
+

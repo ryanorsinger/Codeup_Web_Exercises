@@ -1,0 +1,35 @@
+/*
+
+Pattern of style definition
+selector {
+    property1: value1;
+    property2: value2;
+}
+
+*/
+
+h1 {
+    text-decoration: overline underline;
+    text-align: right;
+}
+
+#wrapper {
+    width: 500px;
+    background-color: grey;
+}
+
+a:link {
+   color: salmon;
+}
+
+a:visited {
+    color: papayawhip;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: pink;
+}

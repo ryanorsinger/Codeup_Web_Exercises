@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Objects Example</title>
+</head>
+<body>
+    <h1>Objects Example</h1>
+
+    <script>
+
+        (function() {
+
+            var app = {
+                "cars": [{
+                    "make": "Hyundai",
+                    "model": "Accent",
+                    "year": "2006"
+                    },
+                    {
+                    "make": "Buick"
+                    "model": "Skylark"
+                    "year": "1987"
+                    }],
+                "getYear": function(car) {
+                    return car.year;
+                },
+                "honkHorn": function() {
+                    alert('HONK HONK');
+                }
+            };
+
+            function getYear(calendar) {
+                return calendar.year;
+            }
+
+            getYear("2015-10=-10");
+
+            app.getYear()
+
+        })();
+
+    </script>
+
+</body>
+</html>
