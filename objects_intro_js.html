@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Objects Intro</title>
+</head>
+<body>
+    <script>
+
+    function getValidInput(inputName) {
+        userInput = prompt('Please input your ' + inputName + ' value.');
+        if (userInput == '' || userInput == null) {
+            return getValidInput(inputName);
+        }
+        return userInput();
+    }
+
+    var person = {};
+    person.firstName = getValidInput("first name");
+    person.lastName = getValidInput("last name");
+    person.sayHello = function() { alert('Hi, ' + this.firstName + ' ' + this.lastName )};
+
+    person.sayHello();
+    // todo:
+    // Add a say hello method to the person object that alerts hello using the firstName and lastName properties.
+
+    // Say hello from the person object.
+    // person.sayHello();
+
+
+
+    </script>
+</body>
+</html>

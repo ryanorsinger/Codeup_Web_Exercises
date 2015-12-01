@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+button {
+    height: 3em;
+    width: 4em;
+    margin: .05em;
+}
+.calculator {
+    width: 420px;
+    border: 1px solid black;
+    position: absolute;
+}
+.display {
+    margin: 5px;
+    position: relative;
+    left: 10px;
+}
+#output {
+    width: 80%;
+}
+.inputs {
+    margin: 19px;
+    position: relative;
+    left: 60px;
+}
+.equals {
+    width: 8em;
+}

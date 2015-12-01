@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>My Tool Store</h1>
+
+    <table id="products">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody class="table-striped" id="insertProducts"></tbody>
+    </table>
+    <br>
+    <!-- <button id="refresh">Refresh Inventory</button> -->
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+(function() {
+    // TODO: Create an ajax GET request for /data/inventory.json
+    var toolInventory = $.ajax("/data/inventory.json");
+
+    toolInventory.done(function(data) {
+
+        $(data).each(function(index) {
+
+            var title = '<td>' + data[index].title + '</td>';
+            var quantity = '<td>' + data[index].quantity + '</td>';
+            var price = '<td>' + data[index].price + '</td>';
+            var categories = '<td>' + data[index].categories.join() + '</td>';
+
+            var itemToAppend = '<tr>' + title + quantity + price + categories + '</tr>';
+
+            $(itemToAppend).appendTo('tbody');
+        });
+    });
+
+    toolInventory.fail(function() {
+        console.log("There was an error!");
+    });
+
+
+
+})();
+</script>
+
+</body>
+</html>

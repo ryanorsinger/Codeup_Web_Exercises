@@ -1,0 +1,188 @@
+<<<<<<< HEAD
+<html>
+<head>
+    <title>CSS Positioning</title>
+
+    <style>
+        .box {
+            position: relative;
+            float: left;
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 25px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .arrow {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+        }
+
+        .red {
+            background-color: #FF0000;
+        }
+        .orange {
+            background-color: #FFA500;
+        }
+        .yellow {
+            background-color: #FFFF00;
+        }
+        .green {
+            background-color: #006400;
+        }
+        .blue {
+            background-color: #0000FF;
+        }
+        .violet {
+            background-color: #9975B9;
+        }
+
+        .ribbon {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        section > .box:nth-child(3n + 1) {
+            clear: both;
+        }
+
+    </style>
+
+</head>
+<body>
+    <img src="/img/codeup-ribbon.png" class="ribbon">
+
+    <h1><a href="">Visible Spectrum Wavelengths</a></h1>
+
+
+    <section class="container">
+
+        <div class="box red">
+            <img src="/img/codeup-arrow.png" class="arrow">
+            620-750nm
+        </div>
+        <div class="box orange">
+            <img src="/img/codeup-arrow.png" class="arrow">
+            590-620nm
+        </div>
+        <div class="box yellow">
+            <img src="/img/codeup-arrow.png" class="arrow">
+            570-590nm
+        </div>
+        <div class="box green">
+            <img src="/img/codeup-arrow.png" class="arrow">
+            495-570nm
+        </div>
+        <div class="box blue">
+            <img src="/img/codeup-arrow.png" class="arrow">
+            450-495nm
+        </div>
+        <div class="box violet">
+            <img src="/img/codeup-arrow.png" class="arrow">
+            380nm-450nm
+        </div>
+    </section>
+
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Model Exercise</title>
+  <style type='text/css'>
+    #ribbon {
+         position: absolute;
+         top: 0;
+         right: 0;
+         border: 0;
+      }
+    h1 {
+      margin-bottom: 0;
+    }
+    /*for img elelment */
+    div>img {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+    }
+    div {
+      border: 1px solid #000;
+      height: 50px;
+      width: 50px;
+      padding: 10px;
+      color: #FFF;
+      font-weight: bold;
+      margin-top: 50px;
+      text-shadow: 1px 1px #ff0000;
+      margin-right: 50px;
+      margin-bottom: 50px;
+      float: left;
+      position: relative;
+    }
+
+    #red {
+      background-color: #F00;
+    }
+    #orange {
+      background-color: #FFA500;
+
+    }
+    #yellow {
+      background-color: #FF0;
+      color: #555544;
+    }
+
+    #green {
+      background-color: #0F0;
+      clear: left;
+
+    }
+    #blue {
+      background-color: #00F;
+
+    }
+    #violet {
+      background-color: #EE82EE;
+
+    }
+</style>
+</head>
+<body>
+  <h1><a href="#">Visible Spectrum Wavelengths</a></h1>
+  <div id="red">620-750nm
+  <img src='img/codeup-arrow.png'>
+  </div>
+
+  <div id="orange">620-750nm
+  <img src='img/codeup-arrow.png'>
+  </div>
+
+
+  <div id="yellow">620-750nm
+  <img src='img/codeup-arrow.png'>
+  </div>
+
+  <div id="green">620-750nm
+  <img src='img/codeup-arrow.png'>
+  </div>
+
+  <div id="blue">620-750nm
+  <img src='img/codeup-arrow.png'>
+  </div>
+
+  <div id="violet">620-750nm
+  <img src='img/codeup-arrow.png'>
+  </div>
+
+  <img src='img/codeup-ribbon.png' id='ribbon'>
+>>>>>>> 19de16b7708b78a493f844665681917cbb4e20d8
+</body>
+</html>

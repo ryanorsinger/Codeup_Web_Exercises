@@ -1,0 +1,104 @@
+<html>
+<head>
+
+    <title>AJAX Blog</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" type="text/css" href="/css/darkly.css">
+
+</head>
+<body>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">AJAX Blog</a>
+        </div>
+
+    </nav>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Welcome to the AJAX blog.</h1>
+                <section class="posts">
+                    <div id="blog-posts"></div>
+                </section>
+            </div>
+            <div class="well col-md-6">
+                <h3>Create new post</h3>
+                <label for="post-title" class="form-label">Title:</label>
+                <input type="text" name="post-title" id="post-title" class="form-control">
+
+                <label for="post-body" class="form-label">Body:</label>
+                <textarea id="post-body" name="post-body" class="form-control" rows="8"></textarea>
+                <br>
+                <button id="create-post-button" class="btn btn-primary btn-lg btn-block ">Submit post</button>
+            </div>
+        </div>
+    </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+    'use strict';
+
+    var posts = [];
+
+    var ajaxRequest = $.get('/data/blog.json');
+
+    var getAllPosts = function() {
+
+        ajaxRequest.always(function() {
+            console.log('request sent');
+        });
+
+        ajaxRequest.fail(function(data, error) {
+            console.log(error);
+            console.log(ajaxRequest.status);
+        });
+
+        ajaxRequest.done(function(data, error) {
+            $.each(data, function(index, value) {
+                addPost(value);
+            });
+        });
+    };
+
+    var addPost = function(post) {
+        posts.push(post);
+
+        var header = '<h3>' + post.title + '</h3>';
+        var content = '<p>' + post.content + '</p>';
+        var date = '<p>Written: ' + post.date + '</p>';
+        var categories = '<p>Categories: ' + post.categories + '</p>';
+
+        var htmlString = header + content + date + categories + '<br>';
+        $('#blog-posts').prepend(htmlString);
+    };
+
+    $('#create-post-button').click(function() {
+        var title = $('#post-title').val();
+        var body = $('#post-body').val();
+        var categories = ['blog', 'example'];
+        var date = new Date().toString();
+
+        var post = {
+            "title": title,
+            "content": body,
+            "date": date,
+            "categories": categories
+        }
+
+        addPost(post);
+    });
+
+
+    getAllPosts();
+
+    </script>
+</body>
+</html>

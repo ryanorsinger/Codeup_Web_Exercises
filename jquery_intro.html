@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="main">
+
+        <h1 id="codeup"><span>Hello Codeup</span></h1>
+
+        <h2 id="welcome">This thing has an id</h2>
+
+        <ul id="list">
+            <li class="items">HTML for content and structure</li>
+            <li class="items">CSS for all styling</li>
+            <li class="items">JS for interactivity</li>
+            <li class="items">jQuery to write less code to accomplish more JS</li>
+            <ul>
+                <li>$ provides simple, consistent syntax to access and manipulate the DOM</li>
+                <li>$ enables cross-browser compatibility</li>
+                <li>$ gives easy syntax for AJAX requests</li>
+            </ul>
+        </ul>
+
+        <p id="loveletter">Dear jQuery, let's run away together and join the circus!</p>
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function(){
+            var htmlInsideMain = $('#main').html();
+
+            console.log('The html inside of my div with id="main" is: ');
+            console.log(htmlInsideMain);
+
+            var codeupContent = $('#codeup').html();
+            console.log('The html inside of the element with id="codeup" is ' + codeupContent);
+
+            var codeupText = $('#codeup').text();
+            console.log('The text inside of the element with id="codeup" is ' + codeupText);
+
+            var itemsWithClass = $('.items').text();
+            console.log('The text of my items with class="items" is ' + itemsWithClass);
+        });
+
+
+    </script>
+</body>
+</html>

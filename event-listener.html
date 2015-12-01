@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <button id="btn1">Click Me!</button>
+    <script>
+
+        // create a handler function
+        function listener(event) {
+            alert('You clicked somewhere in the body of the document!');
+        }
+
+        // register the listener to handle clicks on btn1
+        document.body.addEventListener('click', listener, false);
+
+    </script>
+</body>
+</html>

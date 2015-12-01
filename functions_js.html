@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>JS Functions</title>
+
+
+</head>
+<body>
+<script>
+    var myNameIs = 'Ryan'; // todo: Fill in your name here.
+
+    // FUNCTION DEFINITION
+    function sayHello(firstName, lastName) {
+        console.log('Hello from ' + firstName + lastName);
+    }
+
+    // FUNCTION CALL
+    // function call consists of the name of the function followed by opening and closing paryntheses
+    sayHello(myNameIs);
+    sayHello('Bubba');
+    sayHello('Ramses the Great');
+    sayHello('Hector', ' the rock star!');
+
+    // todo: Call the function 'sayHello' passing the variable 'myNameIs' as a parameter.
+
+    // do not worry about the details of this line
+    // just know that it generates a random number between 1 and 100
+    var random = Math.floor((Math.random()*100)+1);
+
+    function isOdd(number) {
+        var message = (number % 2 == 0) ? 'number passed to isOdd() function is even' : 'The number passed to isOdd() function is odd';
+        return message;
+    }
+
+    console.log('The random number generated is ' + random);
+    console.log(isOdd(random));
+
+
+    // todo:
+    // Create a function called 'isOdd' that takes a number as a parameter.
+    // The function should use the ternary operator to log a message.
+    // The log should tell the number passed in and whether it is odd or not.
+
+    // todo: Call the function 'isOdd' passing the variable 'random' as a parameter.
+
+
+
+
+    do {
+        var name = prompt('Please input your name');
+    } while ((name == '' || name == "null") || !isNaN(name))
+
+
+
+
+
+
+</script>
+</body>
+</html>

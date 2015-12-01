@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <script>
+    // ignore these lines for now
+    // just know that the variable 'color' will end up with a random value from the colors array
+
+
+    var i = 1;
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+    while (i < 10000) {
+
+        var color = colors[Math.floor(Math.random()*colors.length)];
+
+        switch (color) {
+            case 'red':
+                console.log('red is the color of a ripe tomatoe');
+                break;
+            case 'orange':
+                console.log('orange is the color of a ripe tangering');
+                break;
+            case 'yellow':
+                console.log('yellow is the color of a starfruit');
+                break;
+            case 'green':
+                console.log('green grows the garden');
+                break;
+            case 'blue':
+                console.log('I wish the Riverwalk was blue');
+                break;
+            default:
+                console.log('the color is something else');
+            }
+
+            var i++;
+        }
+
+        // todo: create a case statement that will handle every color except indigo and violet
+        // todo: when a color is encountered log a message that tells the color, and an object of that color
+        //       example: Blue is the color of the sky.
+
+        // todo: create a default case that will catch indigo and violet
+        // todo: for the default case, log: I do not know anything by that color.
+
+        </script>
+</body>
+</html>

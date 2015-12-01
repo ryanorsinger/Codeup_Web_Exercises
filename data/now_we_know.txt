@@ -1,0 +1,23 @@
+Now we know:
+
+command space = spotlight
+caniuse.com to see what html will work with different browsers
+virtual machines = it's possible to have another operating system
+subl shortcut
+how to access the VM through the terminal screen
+email glacier@codeup.com
+where to get good root beer
+command q quits
+command tab between open applications
+command shift r does a refresh on a page
+structure of html code - opening tags, closing tags
+h1 tags
+list of commands for the terminal - http://community.codeup.com
+multiple websites have the same IP address
+structure of DNS and how it works
+command option J will open the element inspector
+semantic markup - good organization, spiders love it, gives meaning
+typing.io
+learned how to use a text editor
+imposter syndrome
+first lesson in SEO

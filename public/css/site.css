@@ -1,16 +1,13 @@
-/*
 
-Pattern of style definition
-selector {
-    property1: value1;
-    property2: value2;
-}
-
-*/
 
 h1 {
     text-decoration: overline underline;
     text-align: right;
+}
+
+h1:hover {
+    color: salmon;
+    text-align: left;
 }
 
 #wrapper {

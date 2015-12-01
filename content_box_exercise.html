@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model Exercise</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400|Source+Code+Pro:300,600' rel='stylesheet' type='text/css'>
+    <style>
+
+    html {
+        box-sizing: border-box;
+    }
+
+    .box {
+        float: left;
+        width: 150px;
+        height: 50px;
+        border: solid 1px #111111;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: white;
+        font-weight: 600;
+    }
+
+    .push_first {
+        margin-left: 30px;
+    }
+
+    .push_after {
+        margin-left: inherit;
+    }
+
+    #red {
+        background-color: #FF4136;
+    }
+
+    #orange {
+        background-color: #FF851B;
+    }
+
+    #yellow {
+        background-color: #FFDC00;
+    }
+
+    #green {
+        background-color: #2ECC40;
+    }
+
+    #blue {
+        background-color: #0074D9;
+    }
+
+    #purple {
+        background-color: #B10DC9;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>
+                <a href="http://en.wikipedia.org/wiki/Visible_spectrum">Visible Spectrum Wavelengths</a>
+            </h1>
+
+            <div id="red" class="box">
+                <p>620&mdash;750 nm</p>
+            </div>
+
+            <div class="push_first">
+                <div id="orange" class="box">
+                    <p>590&mdash;620 nm</p>
+                </div>
+
+                <div class="push_after">
+                    <div id="yellow" class="box">
+                        <p>570&mdash;590 nm</p>
+                    </div>
+
+                    <div class="push_after">
+                        <div id="green" class="box">
+                            <p>495&mdash;570 nm</p>
+                        </div>
+
+                        <div class="push_after">
+                            <div id="blue" class="box">
+                                <p>450&mdash;495 nm</p>
+                            </div>
+
+                            <div class="push_after">
+                                <div id="purple" class="box">
+                                    <p>380&mdash;450 nm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

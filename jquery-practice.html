@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="/js/jquery.js"></script>
+    </head>
+    <body>
+    <div class="container">
+        <h1 id="welcome">Hi</h1>
+
+        <p>The quick brown fox jumped over the lazy dog.</p>
+
+        <ul id="unordered-list">
+            <li class="languages" id="html">HTML</li>
+            <li class="languages" id="css">CSS</li>
+            <li class="languages" id="js">JS</li>
+            <li class="languages" id="jquery">jQuery</li>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            alert($('#welcome').innerHTML);
+        });
+
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Functions in JS</h1>
+<script>
+'use strict';
+
+(function () {
+    function sayHello(name) {
+        return 'Hello, ' + name;
+    }
+
+    function isOdd(number) {
+        return (number % 2 !== 0) ? true : false;
+    }
+
+    var someArray = [];
+
+    var myNameIs = 'Codeup'; // todo: Fill in your name here.
+    var random = Math.floor((Math.random()*100)+1);
+    var message = sayHello(myNameIs);
+
+    console.log(message);
+
+    var result = 'is random odd? ' + isOdd(random);
+    console.log(result);
+
+})();
+
+
+
+</script>
+</body>
+</html>

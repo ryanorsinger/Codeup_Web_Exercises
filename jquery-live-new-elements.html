@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Hi</title>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+    <h1>Hello, click me</h1>
+
+    <div id="content1"></div>
+    <div id="content2"></div>
+    <div id="content3"></div>
+    <div id="content4"></div>
+
+    <script>
+        $(this).on('click', function() {
+            $('#content1').html("<h2 id='one'>I'm add first to the document. Click me.</h2>");
+        });
+
+        $(this).on('click', function() {
+           $('#content2').html("<h3 id='two'>I'm second to the document</h3>");
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script src="profiles.json"></script>
+<script type="text/javascript">
+
+// Produce a new object called report and console.log it's contents
+// Report should display
+//  - total number of profiles
+//  - number of active profiles
+//  - sum of the balance of all profiles -
+//  - average balance per users
+//  - average age of all users
+//  - Gender count of all users
+//  - List of all companies represented by the users
+//  - Name the most commonly occuring eye-color.
+//  - What's the balance of all non-active accounts vs. the balance of all active accounts?
+
+var activeCount = 0;
+
+function getAmount(string) {
+  var string = string.replace(/,/g,"");
+  string = string.replace(/\$/g,'');
+  var numberOnly = parseFloat(string);
+  return numberOnly;
+}
+
+var sumOfAllAccounts = 0;
+var sumOfAges = 0;
+var maleCount = 0;
+var femaleCount = 0;
+var companies = [];
+var greenEyes = 0;
+var blueEyes = 0;
+var brownEyes = 0;
+
+profiles.forEach(function (element, index) {
+
+  sumOfAllAccounts += getAmount(element.balance);
+  sumOfAges = sumOfAges + element.age;
+
+  companies.push(element.company);
+
+  if (element.isActive == true) {
+    activeCount ++;
+  }
+
+  if (element.eyeColor == 'blue') {
+    blueEyes ++;
+  } else if (element.eyeColor == 'green') {
+    greenEyes ++;
+  } else if (element.eyeColor == 'brown') {
+    brownEyes ++;
+  }
+
+  // Ternary to count totals of both male and female users
+  (element.gender == "female") ? femaleCount ++ : maleCount++;
+
+});
+
+
+if(Math.max(blueEyes, brownEyes, greenEyes) == blueEyes) {
+  var eyes = "Blue";
+} else if (Math.max(blueEyes, brownEyes, greenEyes) == brownEyes) {
+  var eyes = "Brown";
+} else {
+  var eyes = "Green";
+}
+
+var report = {
+  "total_number_of_profiles": profiles.length,
+  "number_of_active_profiles": activeCount,
+  "sum_total_of_all_accounts": sumOfAllAccounts,
+  "average_balance_per_user": sumOfAllAccounts / profiles.length,
+  "average_age_of_user": sumOfAges / profiles.length,
+  "gender_count":
+      {
+        "male_count": maleCount,
+        "female_count": femaleCount
+      },
+  "all_companies": "",
+  "most_common_eye_color": eyes,
+  "compare_balances_for_active_vs_nonactive_users": ""
+};
+
+console.log(report);
+
+</script>
+</body>
+</html>

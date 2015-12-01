@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CSS Box Model</title>
+    <style>
+        #margin{
+            background:red;
+        }
+        #border{
+
+            background:blue;
+        }
+        #padding{
+            background:yellow;
+
+        }
+        #content{
+            background:green;
+            text-align:center;
+        }
+        .box{
+            margin:10px;
+            padding:10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="margin" class="box">
+            <div id="border"class="box">
+                <div id="padding"class="box">
+                    <div id="content"class="box">text</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

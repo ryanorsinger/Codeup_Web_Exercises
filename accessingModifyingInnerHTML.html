@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<ul>
+    <li data-dbid="123">Item one</li>
+    <li data-dbid="234">Item two</li>
+</ul>
+<script>
+    // get the main heading h1 by id
+    var listItems = document.getElementsByTagName('li');
+
+    for (var i = 0; i < listItems.length; i++) {
+        var dbId = listItems[i].attributes['data-dbid'].value;
+        console.log(dbId);
+    }
+
+    // prints
+    // 123
+    // 234
+</script>
+
+</script>
+</body>
+</html>

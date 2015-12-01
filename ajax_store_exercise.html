@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"><tr><td>Stuff</td></tr></tbody>
+</table>
+
+    <button id="refresh">Refresh Inventory</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function() {
+
+    function updateInventory() {
+        // TODO: Create an ajax GET request for /data/inventory.json
+        var ajaxRequest = $.get('/data/inventory.json');
+
+        ajaxRequest.always(function() {
+            console.log('Request sent');
+        });
+
+        ajaxRequest.fail(function(jqXhr, error) {
+            console.log('Request failed');
+            console.log(error);
+            console.log(ajaxRequest.statusText);
+            console.log(ajaxRequest.status);
+        });
+
+        ajaxRequest.done(function(data) {
+            $('#insertProducts').html('');
+
+            for(var i = 0; i < data.length; i+=1) {
+                htmlString += '<tr><td>' + data[i].title + '</td>'
+                            + '<td>' + data[i].quantity + '</td>'
+                            + '<td>' + data[i].price + '</td>'
+                            + '<td>' + data[i].categories + '</td></tr>';
+            }
+
+            $('#insertProducts').html(htmlString);
+        });
+    }
+
+    updateInventory();
+
+    $('#refresh').click(function() {
+        updateInventory();
+    });
+
+
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+</body>
+</html>

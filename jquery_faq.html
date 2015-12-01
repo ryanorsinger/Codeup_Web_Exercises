@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title></title>
+</head>
+<style type="text/css">
+    .invisible {
+        display: none;
+    }
+</style>
+<body>
+        <h1>jQuery Attribute Methods Exercise</h1>
+        <div></div>
+
+        <dl>
+            <dt>HTML, what is it good for?</dt>
+                <dd>HTML is the language of content and structure.</dd>
+                <dd>It provides the skeleton for structure.</dd>
+                <dd>HTML contents provide the actual content.</dd>
+            <dt>Why select CSS?</dt>
+                <dd>CSS is the language of presentation</dd>
+                <dd>Allows styddng and customization of HOW elements are shown</dd>
+            <dt>The JS of many names</dt>
+                <dd>JS is the language of interactivity</dd>
+                <dd>JS is the language of the browser</dd>
+        </dl>
+
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+
+        $('dd').addClass('invisible');
+
+        $('div').html('<a href="#">Click to toggle the .invisible class on the DD elements</a>');
+        //          eventType, selector, function()[]
+        $('div').on('click', 'a', function(event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+    </script>
+</body>
+</html>

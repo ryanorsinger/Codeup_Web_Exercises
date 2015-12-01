@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Iterating Arrays</title>
+</head>
+<body>
+    <h1>Arrays in JS</h1>
+<script>
+'use strict';
+
+(function () {
+    var names = ['Ringo', 'Paul', 'John', 'George'];
+
+    for (var i = 0; i < names.length; i++) {
+        console.log('The Beatle at index ' + i + ' is ' + names[i]);
+    }
+
+    names.forEach(function (beatle, index) {
+        if (beatle == 'Yoko') {
+            console.log('Yoko is still awesome and a groundbreaking artist.');
+        }
+        console.log('The Beatle at index ' + index + ' is ' + beatle);
+    });
+
+
+    var emptyArray = [];
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+    var emptyArray = new Array();
+    var shapes = new Array('square', 'rectangle', 'circle', 'triangle');
+
+})();
+
+</script>
+</body>
+</html>

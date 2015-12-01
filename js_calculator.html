@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>JS Calculator</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        #calculator {
+            width: 330px;
+            height: auto;
+        }
+        .btn {
+            margin: 3px;
+            border-color: black;
+            border-style: solid;
+            border-top: 1px;
+            border-left: 1px;
+            background-color: #F1ECD6;
+        }
+        #zero{
+            width: 99px;
+        }
+        #display {
+            height: 3em;
+            width: 240px;
+            border-radius: 33px
+        }
+        .numeral {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="calculator">
+        <div class="row">
+            <input type="text" id="display" readonly>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <button id="clear" value="clear"  class="btn btn-lg">C</button>
+                <button id="sign-change" value="±"  class="btn btn-lg">±</button>
+                <button id="percent" value="%"  class="btn btn-lg">%</button>
+                <button id="divide" value="divide"  class="btn btn-lg">/</button>
+            </div>
+            <div class="row">
+                <button id="7" value="7"  class="btn btn-lg numeral">7</button>
+                <button id="8" value="8"  class="btn btn-lg numeral">8</button>
+                <button id="9" value="9"  class="btn btn-lg numeral">9</button>
+                <button id="multiply" value="multiply"  class="btn btn-lg">*</button>
+            </div>
+            <div class="row">
+                <button id="4" value="4"  class="btn btn-lg numeral">4</button>
+                <button id="5" value="5"  class="btn btn-lg numeral">5</button>
+                <button id="6" value="6"  class="btn btn-lg numeral">6</button>
+                <button id="minus" value="minus"  class="btn btn-lg">-</button>
+            </div>
+            <div class="row">
+                <button id="1" value="1"  class="btn btn-lg numeral">1</button>
+                <button id="2" value="2"  class="btn btn-lg numeral">2</button>
+                <button id="3" value="3"  class="btn btn-lg numeral">3</button>
+                <button id="add" value="add"  class="btn btn-lg">+</button>
+            </div>
+            <div class="row">
+                <button id="zero" value="0"  class="btn btn-lg numeral">0</button>
+                <button id="dot" value="."  class="btn btn-lg numeral">.</button>
+
+                <button id="equals" value="equals"  class="btn btn-lg">=</button>
+            </div>
+        <div>
+    </div>
+</div>
+<script>
+    var buttons = document.getElementsByClassName('btn');
+
+    function getExistingValue() {
+
+    }
+
+    function clickButton(event) {
+        if(event.target.innerText == 'C') {
+            document.getElementById('display') = '';
+        } else {
+            var current = getCurrentValue();
+            var input = handleInput(event);
+            updateDisplay(current, input);
+        }
+    }
+
+    for(var i=0; i<buttons.length; i++) {
+        buttons[i].addEventListener("click", clickButton, false);
+    }
+
+    console.log(string);
+
+
+</script>
+
+</body>
+</html>

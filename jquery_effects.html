@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <style>
+        #codeup-ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;
+        }
+
+        #sortable1, #sortable2 {
+            text-align: center;
+            border: 1px solid #eee;
+            width: 142px;
+            min-height: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 5px 0 0 0;
+            float: left;
+            margin-right: 10px;
+        }
+
+        #sortable1 li, #sortable2 li {
+            margin: 0 5px 5px 5px;
+            padding: 5px;
+            font-size: 1.2em;
+            width: 120px;
+        }
+
+        #new-todo {
+            font-size: 1.3em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <img id="codeup-ribbon" src="/img/codeup-ribbon.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+                    <h3>Sortable Todos</h3>
+                    <ul id="sortable1" class="connectedSortable">
+                        <h4 class-"todo-sortable">Today</h4>
+                        <li class="ui-state-default">Item 1</li>
+                        <li class="ui-state-default">Item 2</li>
+                        <li class="ui-state-default">Item 3</li>
+                        <li class="ui-state-default">Item 4</li>
+                        <li class="ui-state-default">Item 5</li>
+                    </ul>
+                    <ul id="sortable2" class="connectedSortable">
+                        <h4 class-"todo-sortable">Tomorrow</h4>
+                        <li class="ui-state-highlight">Item 1</li>
+                        <li class="ui-state-highlight">Item 2</li>
+                        <li class="ui-state-highlight">Item 3</li>
+                        <li class="ui-state-highlight">Item 4</li>
+                        <li class="ui-state-highlight">Item 5</li>
+                    </ul>
+
+                    <input type="text" id="new-todo" placeholder="New todo"></input>
+                </section>
+            </div>
+
+            <div class-"col-md-4">
+            </div>
+
+            <div class="col-md-4">
+                <section class="accordion">
+                    <h3>Languages + frameworks so far:</h3>
+                    <div id="accordion">
+                        <h3>HTML</h3>
+                        <div>
+                          <p>
+                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quamInteger
+                            ut neque. Vivamus nisi metus, molestie vel, gravida incondimentum sit
+                            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverrleo ut
+                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisquvulputate.
+                          </p>
+                        </div>
+                        <h3>CSS</h3>
+                        <div>
+                          <p>
+                            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum siamet
+                            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpiporttitor
+                            velit, faucibus interdum tellus libero ac justo. Vivamus non quamIn
+                          suscipit faucibus urna.
+                          </p>
+                        </div>
+                        <h3>Bootstrap</h3>
+                        <div>
+                          <p>
+                            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisqulobortis.
+                            Phasellus pellentessque purus in massa. Aenean in pede. Phaselluac libero
+                            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magnquis
+                            lacinia ornare, quam ante aliquam nisi, eu iaculis leo puruvenenatis dui.
+                          </p>
+                          <ul>
+                            <li>List item one</li>
+                            <li>List item two</li>
+                            <li>List item three</li>
+                          </ul>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <div>
+                          <p>
+                            Cras dictum. Pellentesque habitant morbi tristique senectus enetus
+                            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primiin
+                            faucibus orci luctus et ultrices posuere cubilia Curae; Aenealacinia
+                          mauris vel est.
+                          </p>
+                          <p>
+                            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequalectus.
+                            Class aptent taciti sociosqu ad litora torquent per conubinostra, per
+                          inceptos himenaeos.
+                          </p>
+                        </div>
+                        <h3>jQuery</h3>
+                        <div>
+                          <p>
+                            Cras dictum. Pellentesque habitant morbi tristique senectus enetus
+                            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primiin
+                            faucibus orci luctus et ultrices posuere cubilia Curae; Aenealacinia
+                          mauris vel est.
+                          </p>
+                          <p>
+                            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequalectus.
+                            Class aptent taciti sociosqu ad litora torquent per conubinostra, per
+                          inceptos himenaeos.
+                          </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+
+    </div>
+    <script>
+        $(function() {
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false
+            });
+        });
+        $(function() {
+            $( "#sortable1, #sortable2" ).sortable({
+              connectWith: ".connectedSortable"
+            }).disableSelection();
+        });
+
+    </script>
+</body>
+</html>

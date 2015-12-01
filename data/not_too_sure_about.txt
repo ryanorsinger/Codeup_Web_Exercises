@@ -1,0 +1,23 @@
+I think I've got it, but I'm not too sure about...
+
+meta
+div tags
+IP addresses and how they work
+how to retrieve a web page
+relationship between writing code on the Mac and code hosted on the VM
+set script, what the heck?
+how to find new commands on the terminal - subl
+span, what the heck?
+
+void tags, which ones? <br> <hr> <img>
+proper syntax for different tags
+iterm or terminal
+whitespace
+scrum, agile
+tabs vs spaces
+block elements vs inline elements
+good places for rootbeer
+linux, wat?
+basic understanding, applying
+mobile apps
+github repos

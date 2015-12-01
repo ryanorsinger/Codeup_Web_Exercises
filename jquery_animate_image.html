@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>jQuery Animate Extra Exercise</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <style>
+        .container {
+            position: absolute;
+        }
+
+        #burns {
+            float: right;
+            position: relative;
+            left: 280px;
+        }
+
+        #bart {
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="container">
+
+        <img id="bart" src="img/bart.jpg" alt="El Barto">
+
+    </main>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+
+$(document).mousemove(function(e){
+    console.log('X coordinate: ' + e.pageX + ', Y coordinate: ' + e.pageY + '.');
+    setTimeout(function() {
+
+        $("#bart").css({
+            'top': e.pageY + 'px',
+            'left': e.pageX + 'px'
+        });
+    }, 200);
+});
+
+
+</script>
+</body>
+</html>

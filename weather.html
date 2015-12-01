@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>Weather API Example</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <style>
+        .forecast {
+            background-color: lightblue;
+            width: auto%;
+            height: 500px;
+
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Weather Application</h1>
+        <section class="current_weather">
+
+        </section>
+        <section class="forecast">
+
+        </section>
+
+
+
+    </main>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+        var ajaxRequest = $.get("http://api.openweathermap.org/data/2.5/weather", {
+            APPID: "a8df453d0094a6356c71e33efe98f000",
+            q:     "Dallas, TX",
+            units: "imperial"
+        });
+
+        ajaxRequest.always(function() {
+            console.log(ajaxRequest.statusText);
+            console.log(ajaxRequest.status);
+        });
+
+        ajaxRequest.fail(function(data, error) {
+            console.log(ajaxRequest.statusText);
+            console.log(ajaxRequest.status);
+        });
+
+        ajaxRequest.done(function(data) {
+            console.log(data);
+            var htmlString = '';
+            var maxTemp = data.main.temp_max;
+            var minTemp = data.main.temp_min;
+            var description = data.weather[0].description;
+
+            htmlString = '<p>Weather is currently ' + description + '</p>'
+                        + 'Min temp is: ' + minTemp
+                        + 'and Max temp is: ' + maxTemp
+                        + '</p>';
+            $('.current_weather').html(htmlString);
+        });
+
+    </script>
+</body>
+</html>
