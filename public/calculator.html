@@ -1,49 +1,119 @@
+<!doctype html>
 <html>
 <head>
     <title>JS Calculator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/calculator.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/calculator.css">
+
 </head>
 <body>
-    <main>
-
-        <h1>Calculator</h1>
-
-        <div class="calculator">
-
-            <input id="left" class="">
-            <input id="operator" class="">
-            <input id="right" class="">
-
-            <button class="number" data-value="7">7</button>
-            <button class="number" data-value="8">8</button>
-            <button class="number" data-value="9">9</button>
-
-            <button class="operator" data-value="/">/</button>
-
-            <button class="number" data-value="4">4</button>
-            <button class="number" data-value="5">5</button>
-            <button class="number" data-value="6">6</button>
-
-            <button class="operator" data-value="*">*</button>
-
-            <button class="number" data-value="1">1</button>
-            <button class="number" data-value="2">2</button>
-            <button class="number" data-value="3">3</button>
-
-            <button class="operator" data-value="-">-</button>
-
-            <button class="number" data-value="0">0</button>
-
-            <button class="operator" data-value=".">.</button>
-            <button class="operator" data-value="=">=</button>
-            <button class="operator" data-value="+">+</button>
-
-            <button class="operator" data-value="clear">Clear</button>
-        </div>
-
+    <main class="container">
+        <section class="calculator">
+            <div class="display">
+                <input type="text" id="output">
+            </div>
+            <div class="inputs">
+                <div class="row">
+                    <button class="operator">clear</button>
+                    <button class="operator">+/-</button>
+                    <button class="operator">%</button>
+                    <button class="operator">/</button>
+                </div>
+                <div class="row">
+                    <button class="number">7</button>
+                    <button class="number">8</button>
+                    <button class="number">9</button>
+                    <button class="operator">*</button>
+                </div>
+                <div class="row">
+                    <button class="number">4</button>
+                    <button class="number">5</button>
+                    <button class="number">6</button>
+                    <button class="operator">-</button>
+                </div>
+                <div class="row">
+                    <button class="number">1</button>
+                    <button class="number">2</button>
+                    <button class="number">3</button>
+                    <button class="operator">+</button>
+                </div>
+                <div class="row">
+                    <button class="number">0</button>
+                    <button class="special">.</button>
+                    <button class="operator">=</button>
+                </div>
+            </div>
+        </section>
     </main>
-    <script src="/js/calculator.js"></script>
+
+
+<script>
+
+    // Declare the output screen.
+    var output = document.getElementById('output');
+
+    // Declare the value of the output screen.
+    var displayValue = output.value;
+
+    // Declare all of my button elements.
+    var buttons = document.getElementsByTagName('button');
+
+    // Assign all event listeners on all buttons.
+    for (var i=0; i< buttons.length; i++) {
+        buttons[i].addEventListener('click', getButtonPress, false);
+    }
+
+
+    function getButtonPress() {
+        var thisButton = this;
+        var thisValue = this.innerText;
+        var thisClass = this.getAttribute('class');
+
+        if(isNumeric(displayValue) && thisClass === 'number') {
+            addValueToDisplay(this.innerText);
+        } else if(this.getAttribute('class') === 'number') {
+
+        } else if(this.getAttribute('class') === 'operator') {
+
+        } else if(this.innerText == 'clear') {
+            clearScreen();
+        }
+
+
+
+    }
+
+    function addValueToDisplay(number) {
+        output.value += number;
+    }
+
+    function calculateResult() {
+
+    }
+
+    function clearScreen() {
+        return output.value = '';
+    }
+
+    function isNumeric(value) {
+        if(!isNaN(value)) {
+            return true;
+        }
+    }
+
+
+
+</script>
+
 </body>
 </html>
