@@ -2,6 +2,13 @@
 
 class Input
 {
+    // checks if an input is empty string or not
+    public static function setAndNotEmpty($key)
+    {
+        if(isset($_REQUEST[$key]) && $_REQUEST[$key] != '') {
+            return true;
+        }
+    }
 
     /**
      * @param $key as a string
