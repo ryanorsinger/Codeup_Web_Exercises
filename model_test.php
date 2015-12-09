@@ -1,6 +1,11 @@
-<?php
-
 require_once 'Model.php';
 
 $model = new Model();
-var_dump($model);
+$model->name = 'Ryan';
+$model->game = 'Parcheesi';
+$model->save();
+
+
+$person = Model::find(1);
+$person->game = 'Chess';
+$model->save();
