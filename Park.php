@@ -28,11 +28,11 @@ class Park extends BaseModel
         $table = static::$table;
 
         $query = "UPDATE $table SET
-                    name                = :name,
-                    location            = :location,
-                    description         = :description,
-                    area_in_acres       = :area_in_acres,
-                    date_established    = :date_established
+                    name = :name,
+                    location = :location,
+                    description = :description,
+                    area_in_acres = :area_in_acres,
+                    date_established = :date_established
                     WHERE id = :id";
 
         // @TODO: Use prepared statements to ensure data security

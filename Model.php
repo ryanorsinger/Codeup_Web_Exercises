@@ -1,5 +1,7 @@
 <?php
 
+require_once 'logins.php';
+
 class Model
 {
 
@@ -23,7 +25,6 @@ class Model
     {
         if (!self::$dbc)
         {
-            require_once 'logins.php';
             require_once 'db_connect.php';
 
             self::$dbc = $dbc;
@@ -98,8 +99,9 @@ class Model
     {
         self::dbConnect();
         $query = "SELECT * FROM static::$table";
-
-        // @TODO: Learning from the previous method, return all the matching records
+        $stmt = self::$dbc->query($query);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
     }
 
 }
