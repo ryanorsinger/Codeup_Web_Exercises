@@ -19,14 +19,12 @@ var_dump($inputs);
 <html>
 <head>
     <title>POST Example</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-    <form method="POST" action="form_results.php">
-        <label>Name</label>
-        <input type="text" name="name"><br>
-        <label>Number</label>
-        <input type="text" name="number"><br>
-        <input type="submit">
-    </form>
+    <div class="row">
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-6">.col-md-6</div>
+    </div>
 </body>
 </html>
