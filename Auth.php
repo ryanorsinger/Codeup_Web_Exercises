@@ -23,14 +23,14 @@ class Auth
         }
     }
 
-    public static function user()
-    {
-        return (isset($_SESSION['LOGGED_IN_USER'])) ? $_SESSION['LOGGED_IN_USER'] : null;
-    }
-
     public static function check()
     {
         return isset($_SESSION['LOGGED_IN_USER']);
+    }
+
+    public static function user()
+    {
+        return (isset($_SESSION['LOGGED_IN_USER'])) ? $_SESSION['LOGGED_IN_USER'] : null;
     }
 
     public static function logout()
