@@ -2,17 +2,18 @@
 
 require_once 'Input.php';
 require_once 'Log.php';
+require_once 'User.php';
 
 class Auth
 {
-
-    public static $password = '$2y$10$SLjwBwdOVvnMgWxvTI4Gb.YVcmDlPTpQystHMO2Kfyi/DS8rgA0Fm';
 
     public static function attempt($username, $password)
     {
         $log = new Log();
 
-        if($username == 'ryano' && password_verify($password, static::$password)) {
+        $user = User::findUserByUsername($username);
+
+        if($username == $user->username && password_verify($password, $user->password)) {
             $_SESSION['LOGGED_IN_USER'] = $username;
 
             $log->info("$username logged in successfully");
@@ -23,14 +24,14 @@ class Auth
         }
     }
 
-    public static function user()
-    {
-        return (isset($_SESSION['LOGGED_IN_USER'])) ? $_SESSION['LOGGED_IN_USER'] : null;
-    }
-
     public static function check()
     {
         return isset($_SESSION['LOGGED_IN_USER']);
+    }
+
+    public static function user()
+    {
+        return (isset($_SESSION['LOGGED_IN_USER'])) ? $_SESSION['LOGGED_IN_USER'] : null;
     }
 
     public static function logout()

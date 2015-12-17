@@ -65,6 +65,7 @@ class Model
 
     protected function update($id) {}
 
+
     /*
      * Find a record based on an id
      */
